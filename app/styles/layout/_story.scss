@@ -1,0 +1,142 @@
+.story {
+    padding: 10rem 0;
+    &-list {
+        list-style: none;
+        @include flexBox(stretch, space-between, row);
+        margin-top: 5rem;
+    }
+    &-item {
+        width: calc(33.33% - 20px); 
+        &-title {
+            color: $text-color;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;    
+            margin-bottom: 2rem;        
+        }
+        &-desc {
+            font-size: 13px;
+            font-weight: 300;
+            color: $dark-gray-color;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid $border-color  ;
+        }
+    }
+    &-media {
+        position: relative;
+        margin-bottom: 2rem;
+        &-img {
+            @include size(100%, 24rem);
+            object-fit: cover;            
+        }
+        &-date {
+            padding: 15px 20px;
+            background-color: $third-color;
+            @include flexBox(center, center, column);
+            position: absolute;
+            bottom: 1rem;
+            left: -1rem;
+        }
+        &-day {
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+        }
+        &-month {
+            font-size: 15px;
+            font-weight: 300;
+            font-style: italic;
+            color: white;
+        }
+    }
+    &-meta {
+        @include flexBox(stretch, flex-start, row);
+        font-style: italic;
+        &-item {
+            margin-right: 2rem;
+        }
+        &-icon {
+            padding-right: 0.5rem;
+            color: $third-color;
+        }
+        &-count {
+            color: $text-color;
+        }
+    }
+
+    @media screen and (max-width: 1023px) {
+        padding: 5rem 0;
+        &-media {
+            &-img {
+                height: 15rem;
+            }
+            &-date {
+                padding: 8px 12px;
+            }
+            &-day {
+                font-size: 25px;
+            }
+            &-month {
+                font-size: 1rem;
+            }
+        }
+        &-item {
+            &-title {
+                font-size: 13px;
+            }
+            &-desc {
+                font-size: 1.15rem;
+            }
+        }
+        &-meta {
+            font-size: 12px;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        padding-bottom: 0;
+        &-list {
+            display: block;
+        }
+        &-media {
+            &-img {
+                height: 18rem;
+            }
+            &-date {
+                bottom: 0.5rem;
+                left: -0.5rem;
+            }
+        }
+        &-item {
+            width: 100%;
+            margin-bottom: 3rem;
+        }
+    }
+}
+
+.map {
+    padding: 6rem 0;
+    background: linear-gradient(to bottom, rgba(white, 0.5), rgba(white, 0.4)), url("../images/img-map.png") no-repeat center / cover;
+    &-content {
+        @include flexBox(center, center, column);
+        &-title {
+            font-size: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: $primary-color;
+            padding: 1.8rem;
+            position: relative;
+            &::after {
+                content: "";
+                width: 6.5rem;
+                height: 4px;
+                background-color: $primary-color;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}

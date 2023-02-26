@@ -1,0 +1,48 @@
+.services {
+    padding: 11rem 0 12rem 0;
+    background-color: white;
+    &-list {
+        @include flexBox(stretch, space-between, row);
+        flex-wrap: wrap;
+        margin-top: 6.5rem;
+    }
+    &-item {
+        @include flexBox(start, center, row);
+        width: calc(33.33% - 2.9rem);
+        &-image {
+            width: 35px;
+            object-fit: cover;
+            margin: 0 3rem;
+        }
+        &-info {
+            width: calc(100% - 9.5rem);
+        }
+        &-title {
+            text-transform: uppercase;
+            color: $title-color;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+        }
+        &-desc {
+            color: $text-color;
+            line-height: 1.6;
+            font-weight: 300;
+            font-family: $secondary-font;
+            margin-bottom: 6rem;
+        }
+    }
+    
+    @media screen and (max-width: 1023px) {
+        padding: 7rem 0 8rem 0;
+        &-list {
+            display: block;
+        }
+        &-item {
+            width: 100%;
+            margin: 0 auto;
+            &-desc {
+                margin-bottom: 4.5rem;
+            }
+        }
+    }
+}

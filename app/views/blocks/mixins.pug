@@ -1,0 +1,94 @@
+mixin menuLink(title, href = "#")
+	li.header-menu-item
+		a.header-menu-link(href=href)= title
+
+mixin headerBottomItem(number, title)
+	.header-bottom-item
+		span.header-bottom-number= number
+		span.header-bottom-text= title
+
+mixin blockHeader(caption, title, describe)
+	.block-header 
+		h3.block-header-caption= caption
+		h2.block-header-title= title
+		if describe
+			p.block-header-desc= describe
+
+mixin aboutItem(src, desc)
+	.about-item 
+		img.about-image(src=src)
+		.about-content
+			i.fa.fa-users.about-icon
+			span.about-title= desc
+
+mixin serviceItem(src, title, desc)
+	.services-item
+		img.services-item-image(src=src)
+		.services-item-info 
+			h3.services-item-title=title 
+			p.services-item-desc=desc
+
+mixin wedoItem(src, title, desc, active = "")
+	.wedo-item(class= active)
+		.wedo-item-header
+			img.wedo-item-icon(src=src)
+			h3.wedo-item-title= title
+			i.fa.fa-angle-up.wedo-item-arrow
+		.wedo-item-content
+				.wedo-item-text= desc
+
+mixin teamItem(src, name, position)
+	.team-item 
+		.team-item-img
+			img(src=src).team-item-pic
+			.team-item-content 
+				ul.team-social
+					li.team-social-item 
+						a.team-social-link(href="#")
+							i.fab.fa-facebook-f 
+					li.team-social-item 
+						a.team-social-link(href="#")
+							i.fab.fa-twitter 
+					li.team-social-item 
+						a.team-social-link(href="#")
+							i.fab.fa-pinterest
+					li.team-social-item 
+						a.team-social-link(href="#")
+							i.fab.fa-instagram
+		.team-item-info
+			h3.team-item-name= name
+			span.team-item-position= position
+
+mixin workItem(src, srcicon, title, desc, full = "")
+	.work-item(class= full)
+		img.work-item-image(src= src)
+		.work-item-content
+			img.work-item-icon(src= srcicon)
+			h3.work-item-title= title
+			span.work-item-desc= desc
+
+mixin peopleItem(src, name, position= "Graphic Design", desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit sed natus reiciendis velit inventore cumque! Fugit sed natus reiciendis velit inventore cumque!")
+	.people-item
+		img.people-item-img(src=src)
+		.people-item-info
+			h3.people-item-name= name
+			span.people-item-position= position
+			span.people-item-desc= desc
+
+
+mixin storyItem(src, day, month, count1, count2, title="Lorem ipsum dolor sit amet ", desc="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit et dolorum provident maiores tenetur quos sit possimus vitae voluptatem dignissimos est, aut animi sint voluptates quis, molestiae tempore vero rerum.")
+	li.story-item 
+		.story-media 
+			img.story-media-img(src= src)
+			.story-media-date
+				span.story-media-day= day
+				span.story-media-month= month
+		h3.story-item-title= title
+		.story-item-desc= desc
+		.story-meta 
+			.story-meta-item 
+				i.fa.fa-eye.story-meta-icon 
+				span.story-meta-count= count1
+			.story-meta-item 
+				i.fa.fa-comment.story-meta-icon 
+				span.story-meta-count= count2

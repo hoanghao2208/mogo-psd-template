@@ -1,0 +1,81 @@
+.team {
+    padding: 100px 0;
+    background-color: white;
+    &-list {
+        @include flexBox(stretch, space-between, row);
+    }
+    &-item {
+        width: calc(33.33% - 20px);
+        &-info {
+            margin-top: 3rem;
+            text-align: center;
+        }
+        &-name {
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 18px;
+            color: $text-color;
+            margin-bottom: 1.5rem;
+        }
+        &-position {
+            // font-family: $secondary-font;
+            font-size: 15px;
+            font-weight: 300;
+            font-style: italic;
+            color: $text-color;
+        }
+        &-pic {
+            @include size(100%, 47rem);
+            object-fit: cover
+        }
+    }
+    &-social {
+        @include flexBox(center, center, row);
+        list-style: none;
+        &-link {
+            // để center được icon
+            @include flexBox(center, center, row);
+            @include size(6rem);
+            color: $primary-color;
+            font-size: 2.5rem;
+            background-color: $secondary-color;
+            transition: all 0.2s ease-in-out;
+            &:hover {
+                background-color: $primary-color;
+                color: white;
+            }
+        }
+        &-item {
+            &:not(:first-child) {
+                border-left: 1px solid $primary-color;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1023px) {
+        padding: 5rem 0;
+        &-list {
+            @include touchSlider(60%);    
+        }
+    }
+    @media screen and (max-width: 767px) {
+        &-list {
+            @include touchSlider(90%);
+        }
+        &-item {
+            &-pic {
+                height: 40rem;
+            }
+        }
+    }
+}
+
+.brand {
+    padding: 8rem 0;
+    background-color: $gray-color;
+    @media screen and (max-width: 767px) {
+        padding: 3rem 0;
+    }
+}
+
+@include hoverEffect(".team-item-img", ".team-item-content");

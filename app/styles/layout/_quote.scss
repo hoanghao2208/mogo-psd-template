@@ -1,0 +1,103 @@
+.quote {
+    padding: 6.5rem 0;
+    background-color: $gray-color;
+    &-container {
+        // outline: none;
+        &-arrow {
+            color: $dark-gray-color;
+            cursor: pointer;
+            font-size: 3rem;
+            padding: 1rem 2rem;
+        }
+        &-content {
+            padding: 0 55px;
+            @include flexBox(center, flex-start, row);
+        }
+        &-icon {
+            border: 3px solid $third-color;
+            @include size(15rem, 15rem);
+            @include flexBox(center, center, row);
+            // không bị thu lại
+            flex-shrink: 0;
+        }
+        &-info {
+            padding-left: 6rem;
+        }
+        &-desc {
+            font-family: $secondary-font;
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            text-align: justify;
+            color: $text-color;
+        }
+        &-author {
+            font-size: 24px;
+            font-family: $third-font;
+            position: relative;
+            padding-left: 7rem;
+            &::before {
+                content: "";
+                height: 4px;
+                width: 6rem;
+                background-color: $primary-color;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+            }
+        }
+    }
+    .slick-initialized .slick-slide {
+        display: flex !important;
+    }
+    .slick-arrow {
+        background-color: transparent;
+        border: 0;
+        color: $dark-gray-color;
+        cursor: pointer;
+        font-size: 3rem;
+        padding: 1rem 2rem;
+        @include absoluteCenter("top");
+    }
+    .slick-prev {
+        left: 0;
+        z-index: 10;
+    }
+    .slick-next {
+        right: 0;
+    }
+    @media screen and (max-width: 767px) {
+        &-container {
+            &-arrow {
+                display: none;
+            }
+            &-content {
+                padding: 0;
+                flex-direction: column;
+            }
+            &-info {
+                padding: 2rem 1rem;
+            }
+            &-icon {
+                @include size(10rem);
+            }
+            &-img {
+                max-width: 50%;
+            }
+            &-desc {
+                font-size: 1.8rem;
+            }
+            &-author {
+                font-size: 2rem;
+                padding-left: 5rem;
+                &::before {
+                    width: 4rem;
+                    height: 4px;
+                }
+            }
+        }
+    }
+}

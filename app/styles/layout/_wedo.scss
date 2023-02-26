@@ -1,0 +1,76 @@
+.wedo {
+    padding: 10rem 0;
+    &-item {
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+        &-header {
+            @include flexBox(center, flex-start, row);
+            padding: 1.5rem;
+            border: 1px solid $dark-gray-color;
+            cursor: pointer;
+        }
+        &-icon {
+            margin-right: 1.5rem;
+        }
+        &-title {
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        &-arrow {
+            margin-left: auto;
+            font-size: 30px;
+            color: $dark-gray-color;
+            font-weight: 400;
+        }
+        &-content {
+            padding: 2rem;
+            border: 1px solid $dark-gray-color;
+            border-top: 0;
+            font-size: 15px;
+            font-family: $secondary-font;
+            color: $text-color;
+            font-style: italic;
+            line-height: 1.6;
+            font-weight: 300;
+            display: none;
+        }
+        &-text {
+            height: 14rem;
+            overflow-y: auto;
+            padding-right: 2rem;
+            &::-webkit-scrollbar {
+                width: 6px;
+            }               
+            &::-webkit-scrollbar-track {
+                background-color: $light-gray-color;
+            }               
+             &::-webkit-scrollbar-thumb {
+                background-color: $third-color;
+                border-radius: 2rem;
+            }
+        }
+    }
+    &-item.is-active .wedo-item-content {
+        display: block;
+    }
+    @media screen and (max-width: 767px) {
+        padding: 5rem 0;
+        &-container-image {
+            margin-bottom: 20px;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        &-container {
+            @include flexBox(stretch, space-between, row);
+            &-image {
+                width: calc(50% - 15px);
+                object-fit: cover;
+            }
+            &-content {
+                width: calc(50% - 15px);
+            }
+        }
+    }
+}
